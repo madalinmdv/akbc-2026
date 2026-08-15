@@ -1,4 +1,4 @@
-"""Reading and writing the JSON Lines format used for data and predictions."""
+# Reading and writing the JSON Lines format used for data and predictions.
 
 import json
 from pathlib import Path

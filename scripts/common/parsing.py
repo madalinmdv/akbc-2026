@@ -1,12 +1,3 @@
-"""Turning a model reply into the list of object entities.
-
-Every generator instructs the model to close its reply with an `Answer:` line
--- `Answer: <number>` for numeric relations, `Answer: [...]` for list
-relations -- so `parse_answer` serves all of them. `parse_name_list` handles
-the one variant that cannot use a JSON array: the award recall chain, whose
-replies run to hundreds of names and are read line by line.
-"""
-
 import json
 import re
 

@@ -1,10 +1,16 @@
-# Knowledge Base Construction from Pre-trained Language Models
+# Ensembling Elicitation Strategies for Knowledge Base Construction
+
+This repository represents my implementation for the Automated Knowledge Base Construction shared. The challange task focuses specifically on leveraging Large Language Models to construct structured knowledge bases.
+
+Given a subject s and a relation r, the task is to predict the complete set of correct object strings {o₁, o₂, …, oₖ}, where there may be zero, one or multiple correct answers.
 
 Closed-book knowledge base construction: given a subject entity and a relation,
 predict the object entities, using only what a local language model already
 knows. Four prompting strategies are run over the same data and combined by a
 majority-vote ensemble; `awardWonBy` is handled separately because its answer
 lists are one to two orders of magnitude longer than the other relations'.
+
+The proposed system employs multiple prompting strategies and aggregates the resulting predictions according to the relation type in order to generate a final output. Specifically, multiple prediction sets produced by the same model under different prompting strategies are combined to distinguish stable parametric knowledge from prompt-induced hallucinations. The chosen model for this task is Meta's 30B parameter Muse Glimmer.
 
 ## Project structure
 

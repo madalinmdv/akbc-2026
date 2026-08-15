@@ -1,11 +1,3 @@
-"""Majority-vote ensemble over the four prompting strategies.
-
-Numeric relations are averaged over the largest cluster of strategies that
-agree within a tolerance; list relations keep the items at least two
-strategies name. Covers every relation except awardWonBy, whose predictions
-come from awards.py alone.
-"""
-
 import argparse
 import sys
 

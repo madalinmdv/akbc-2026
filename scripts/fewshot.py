@@ -1,10 +1,3 @@
-"""Few-shot chain-of-thought prompting.
-
-Each relation gets a system prompt with explicit reasoning steps and a block
-of worked examples; the model reasons through the steps in a single turn and
-closes with the shared `Answer:` line.
-"""
-
 from pathlib import Path
 
 from common.ollama_client import build_system_prompt, call_model

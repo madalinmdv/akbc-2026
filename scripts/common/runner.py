@@ -1,5 +1,3 @@
-"""The command-line interface and generation loop shared by every generator."""
-
 import argparse
 from collections import Counter
 from pathlib import Path

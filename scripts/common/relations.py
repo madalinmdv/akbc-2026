@@ -7,7 +7,6 @@ AWARD_RELATION = "awardWonBy"
 ANSWER_TYPES = {
     "hasArea": "numeric",
     "hasCapacity": "numeric",
-    "seriesHasNumberOfEpisodes": "numeric",
     "countryLandBordersCountry": "list",
     "personHasCityOfDeath": "list",
     "companyTradesAtStockExchange": "list",

@@ -1,9 +1,4 @@
-"""Zero-shot question prompting.
-
-The baseline of the shared task: the question from
-prompt_templates/question_prompts.csv with the subject filled in, sent with no
-examples and no worked reasoning.
-"""
+"""Zero-shot question prompting."""
 
 from pathlib import Path
 

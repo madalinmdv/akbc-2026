@@ -1,12 +1,3 @@
-"""Recall-chained awardWonBy predictions.
-
-The only generator for awardWonBy, whose object lists run to hundreds of
-recipients rather than the handful the other relations expect. It asks for
-recipients repeatedly, each round shown the names already gathered so it only
-has to add what is missing, then prunes the merged list of the names the model
-is certain are wrong.
-"""
-
 from pathlib import Path
 
 from tqdm import tqdm

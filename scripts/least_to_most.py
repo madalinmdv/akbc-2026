@@ -1,13 +1,3 @@
-"""Least-to-most prompting (Zhou et al., 2022).
-
-The question is reduced to a chain of simpler subquestions, each asked as its
-own turn so the final answer is conditioned on the subanswers the model has
-already committed to. The decomposition is fixed per relation -- every
-instance of a relation reduces the same way -- and the worked examples are the
-few-shot ones re-rendered as least-to-most traces, so the two strategies are
-compared on the same demonstrations.
-"""
-
 from pathlib import Path
 
 from common.ollama_client import build_system_prompt, call_model

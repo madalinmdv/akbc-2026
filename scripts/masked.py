@@ -1,9 +1,4 @@
-"""Zero-shot masked (cloze) prompting.
-
-The sentence from prompt_templates/masked_prompts.csv with the subject filled
-in and a [MASK] left for the object entities, sent with no examples and no
-worked reasoning.
-"""
+"""Zero-shot masked prompting."""
 
 from pathlib import Path
 

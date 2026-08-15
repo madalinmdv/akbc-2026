@@ -1,6 +1,3 @@
-"""Prompt-template loading and the answer-format instructions shared by the
-zero-shot baselines."""
-
 import csv
 from pathlib import Path
 

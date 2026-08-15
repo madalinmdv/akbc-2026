@@ -1,5 +1,3 @@
-"""Ollama setup and the single entry point used to query a model."""
-
 import subprocess
 import time
 
