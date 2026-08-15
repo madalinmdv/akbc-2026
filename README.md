@@ -1,6 +1,6 @@
 # Ensembling Elicitation Strategies for Knowledge Base Construction
 
-This repository represents my implementation for the Automated Knowledge Base Construction shared. The challange task focuses specifically on leveraging Large Language Models to construct structured knowledge bases.
+This repository represents the implementation for the Automated Knowledge Base Construction shared. The challange task focuses specifically on leveraging Large Language Models to construct structured knowledge bases.
 
 Given a subject s and a relation r, the task is to predict the complete set of correct object strings {o₁, o₂, …, oₖ}, where there may be zero, one or multiple correct answers.
 
