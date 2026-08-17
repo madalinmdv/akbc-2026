@@ -1,6 +1,17 @@
 # Ensembling Elicitation Strategies for Knowledge Base Construction
 
-Large language models represent a promising alternative for automating structured knowledge bases construction, but their reliance on parametric knowledge makes them susceptible to hallucinations and incomplete information. The Automated Knowledge Base Construction competition investigates the use of large language models to construct structured knowledge bases from their parametric knowledge alone, without fine-tuning or external retrieval. Given a subject--relation pair, participants must predict the complete set of correct objects across several relation types. Our approach proposes an ensemble of four prompting strategies: **question-style, masked-style, few-shot chain-of-thought, and least-to-most prompting.** It aggregates their predictions using relation-aware majority voting. The resulting system achieves a Macro-F1 of **0.6651** on the hidden test set, substantially outperforming the provided baseline of **0.294**.
+Large language models represent a promising alternative for automating structured knowledge bases construction, but their reliance on parametric knowledge makes them susceptible to hallucinations and incomplete information. The Automated Knowledge Base Construction competition investigates the use of large language models to construct structured knowledge bases from their parametric knowledge alone, without fine-tuning or external retrieval. Given a subject--relation pair, participants must predict the complete set of correct objects across several relation types.
+
+| Relation | Description | Cardinality |
+|---|---|---|
+| `awardWonBy` | Identifies the recipients of a specified award | Often high — many awards are conferred upon dozens or hundreds of entities over time |
+| `countryLandBorderCountries` | Links a country to the nations sharing its land border | Variable — empty for borderless countries, multiple values otherwise |
+| `hasArea` | Specifies a geographic entity's surface area in square kilometres | Single value |
+| `companyTradesAtStockExchange` | Maps a company to the stock exchange(s) where its shares are publicly traded | Variable — empty for unlisted subsidiaries, multiple values otherwise |
+| `hasCapacity` | Denotes the maximum spectator capacity of a venue | Single value |
+| `personHasCityOfDeath` | Records the city where an individual passed away | Empty if the person is still living |
+
+Our approach proposes an ensemble of four prompting strategies: **question-style, masked-style, few-shot chain-of-thought, and least-to-most prompting.** It aggregates their predictions using relation-aware majority voting. The resulting system achieves a Macro-F1 of **0.6651** on the hidden test set, substantially outperforming the provided baseline of **0.294**.
 
 <img width="2613" height="2613" alt="3be2d7e9-7948-473c-bb77-d31405d11817_page-0001" src="https://github.com/user-attachments/assets/993d05b0-d868-4809-ae32-e7b6f3d704b5" />
 
