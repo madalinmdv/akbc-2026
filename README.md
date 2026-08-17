@@ -11,9 +11,27 @@ Large language models represent a promising alternative for automating structure
 | `hasCapacity` | Denotes the maximum spectator capacity of a venue | Single value |
 | `personHasCityOfDeath` | Records the city where an individual passed away | Empty if the person is still living |
 
-Our approach proposes an ensemble of four prompting strategies: **question-style, masked-style, few-shot chain-of-thought, and least-to-most prompting.** It aggregates their predictions using relation-aware majority voting. There is an exception however for the *awardWonBy* relation, where the large number of correct objects per subject makes voting across strategies too restrictive. For this relation a **self-refinement** The resulting system achieves a Macro-F1 of **0.6651** on the hidden test set, substantially outperforming the provided baseline of **0.294**.
+## Approach
+
+Our system uses an ensemble of four prompting strategies — \*\*question-style, masked-style, few-shot chain-of-thought, and least-to-most prompting\*\* — with predictions aggregated via \*\*relation-aware majority voting\*\*.
+
+The one exception is the \*\*\*awardWonBy\*\*\* relation, where the high number of correct objects per subject makes strict majority voting overly restrictive. For this relation, we instead use a \*\*self-refinement\*\* approach: the model first iteratively expands its candidate list of award recipients across follow-up rounds to maximize recall, then self-reviews and prunes the list to remove low-confidence names. This trades a modest drop in recall for a substantial gain in precision.
+
+The resulting system achieves a \*\*Macro-F1 of 0.6651\*\* on the hidden test set, substantially outperforming the provided baseline of \*\*0.294\*\*.
 
 <img width="2613" height="2613" alt="3be2d7e9-7948-473c-bb77-d31405d11817_page-0001" src="https://github.com/user-attachments/assets/993d05b0-d868-4809-ae32-e7b6f3d704b5" />
+
+## Results
+
+| Relation                    | P      | R      | F1     |
+|------------------------------|--------|--------|--------|
+| awardWonBy                  | 0.5179 | 0.2850 | 0.3357 |
+| companyTradesAtStockExchange| 0.9433 | 0.8327 | 0.8105 |
+| countryLandBordersCountry    | 0.9861 | 0.9702 | 0.9680 |
+| hasArea                     | 0.8200 | 0.8200 | 0.8200 |
+| hasCapacity                 | 0.2857 | 0.2857 | 0.2857 |
+| personHasCityOfDeath          | 0.9150 | 0.6000 | 0.5667 |
+| **All relations**           | **0.7728** | **0.6760** | **0.6651** |
 
 
 ## Project structure
