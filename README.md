@@ -1,16 +1,9 @@
 # Ensembling Elicitation Strategies for Knowledge Base Construction
 
-This repository represents the implementation for the Automated Knowledge Base Construction shared. The challange task focuses specifically on leveraging Large Language Models to construct structured knowledge bases.
+Large language models represent a promising alternative for automating structured knowledge bases construction, but their reliance on parametric knowledge makes them susceptible to hallucinations and incomplete information. The Automated Knowledge Base Construction competition investigates the use of large language models to construct structured knowledge bases from their parametric knowledge alone, without fine-tuning or external retrieval. Given a subject--relation pair, participants must predict the complete set of correct objects across several relation types. Our approach proposes an ensemble of four prompting strategies: question-style, masked-style, few-shot chain-of-thought, and least-to-most prompting. It aggregates their predictions using relation-aware majority voting. The resulting system achieves a Macro-F1 of 0.6651 on the test set, substantially outperforming the provided baseline of 0.294.
 
-Given a subject s and a relation r, the task is to predict the complete set of correct object strings {o₁, o₂, …, oₖ}, where there may be zero, one or multiple correct answers.
+<img width="2613" height="2613" alt="3be2d7e9-7948-473c-bb77-d31405d11817_page-0001" src="https://github.com/user-attachments/assets/993d05b0-d868-4809-ae32-e7b6f3d704b5" />
 
-Closed-book knowledge base construction: given a subject entity and a relation,
-predict the object entities, using only what a local language model already
-knows. Four prompting strategies are run over the same data and combined by a
-majority-vote ensemble; `awardWonBy` is handled separately because its answer
-lists are one to two orders of magnitude longer than the other relations'.
-
-The proposed system employs multiple prompting strategies and aggregates the resulting predictions according to the relation type in order to generate a final output. Specifically, multiple prediction sets produced by the same model under different prompting strategies are combined to distinguish stable parametric knowledge from prompt-induced hallucinations. The chosen model for this task is Meta's 30B parameter Muse Glimmer.
 
 ## Project structure
 
