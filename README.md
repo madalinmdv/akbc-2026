@@ -13,9 +13,9 @@ Large language models represent a promising alternative for automating structure
 
 ## Approach
 
-Our system uses an ensemble of four prompting strategies — \*\*question-style, masked-style, few-shot chain-of-thought, and least-to-most prompting\*\* — with predictions aggregated via \*\*relation-aware majority voting\*\*.
+Our system uses an ensemble of four prompting strategies — **question-style, masked-style, few-shot chain-of-thought, and least-to-most prompting** — with predictions aggregated via relation-aware majority voting.
 
-The one exception is the \*\*\*awardWonBy\*\*\* relation, where the high number of correct objects per subject makes strict majority voting overly restrictive. For this relation, we instead use a \*\*self-refinement\*\* approach: the model first iteratively expands its candidate list of award recipients across follow-up rounds to maximize recall, then self-reviews and prunes the list to remove low-confidence names. This trades a modest drop in recall for a substantial gain in precision.
+The one exception is the **awardWonBy** relation, where the high number of correct objects per subject makes strict majority voting overly restrictive. For this relation, we instead use a **self-refinement** approach: the model first iteratively expands its candidate list of award recipients across follow-up rounds to maximize recall, then self-reviews and prunes the list to remove low-confidence names. This trades a modest drop in recall for a substantial gain in precision.
 
 <img width="2613" height="2613" alt="3be2d7e9-7948-473c-bb77-d31405d11817_page-0001" src="https://github.com/user-attachments/assets/993d05b0-d868-4809-ae32-e7b6f3d704b5" />
 
