@@ -17,21 +17,36 @@ Our system uses an ensemble of four prompting strategies — \*\*question-style,
 
 The one exception is the \*\*\*awardWonBy\*\*\* relation, where the high number of correct objects per subject makes strict majority voting overly restrictive. For this relation, we instead use a \*\*self-refinement\*\* approach: the model first iteratively expands its candidate list of award recipients across follow-up rounds to maximize recall, then self-reviews and prunes the list to remove low-confidence names. This trades a modest drop in recall for a substantial gain in precision.
 
-The resulting system achieves a \*\*Macro-F1 of 0.6651\*\* on the hidden test set, substantially outperforming the provided baseline of \*\*0.294\*\*.
-
 <img width="2613" height="2613" alt="3be2d7e9-7948-473c-bb77-d31405d11817_page-0001" src="https://github.com/user-attachments/assets/993d05b0-d868-4809-ae32-e7b6f3d704b5" />
 
 ## Results
 
-| Relation                    | P      | R      | F1     |
-|------------------------------|--------|--------|--------|
-| awardWonBy                  | 0.5179 | 0.2850 | 0.3357 |
-| companyTradesAtStockExchange| 0.9433 | 0.8327 | 0.8105 |
+### Competition Baseline
+
+| Relation                     | P      | R      | F1     |
+|-------------------------------|--------|--------|--------|
+| awardWonBy                   | 0.3058 | 0.1414 | 0.1510 |
+| companyTradesAtStockExchange | 0.2917 | 0.7073 | 0.2727 |
+| countryLandBordersCountry    | 0.7424 | 0.8891 | 0.7315 |
+| hasArea                      | 0.3400 | 0.3400 | 0.3400 |
+| hasCapacity                  | 0.1224 | 0.1224 | 0.1224 |
+| personHasCityOfDeath          | 0.1700 | 0.6500 | 0.1700 |
+| **All Relations**            | **0.3052** | **0.5110** | **0.2964** |
+
+### Our Approach
+
+| Relation                     | P      | R      | F1     |
+|-------------------------------|--------|--------|--------|
+| awardWonBy                   | 0.5179 | 0.2850 | 0.3357 |
+| companyTradesAtStockExchange | 0.9433 | 0.8327 | 0.8105 |
 | countryLandBordersCountry    | 0.9861 | 0.9702 | 0.9680 |
-| hasArea                     | 0.8200 | 0.8200 | 0.8200 |
-| hasCapacity                 | 0.2857 | 0.2857 | 0.2857 |
+| hasArea                      | 0.8200 | 0.8200 | 0.8200 |
+| hasCapacity                  | 0.2857 | 0.2857 | 0.2857 |
 | personHasCityOfDeath          | 0.9150 | 0.6000 | 0.5667 |
-| **All relations**           | **0.7728** | **0.6760** | **0.6651** |
+| **All Relations**            | **0.7728** | **0.6760** | **0.6651** |
+
+By combining an ensemble of prompting strategies with relation-aware voting and a dedicated self-refinement method for **awardWonBy**, our systeam reach a Macro F1 score of **0.6651** overall. It should be noted, however, that the baseline
+was produced using a considerably smaller model, which limits the extent to which the results can be interpreted as a direct comparison of the proposed approach against the baseline.
 
 
 ## Project structure
