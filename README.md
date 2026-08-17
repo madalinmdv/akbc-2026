@@ -11,7 +11,7 @@ Large language models represent a promising alternative for automating structure
 | `hasCapacity` | Denotes the maximum spectator capacity of a venue | Single value |
 | `personHasCityOfDeath` | Records the city where an individual passed away | Empty if the person is still living |
 
-Our approach proposes an ensemble of four prompting strategies: **question-style, masked-style, few-shot chain-of-thought, and least-to-most prompting.** It aggregates their predictions using relation-aware majority voting. The resulting system achieves a Macro-F1 of **0.6651** on the hidden test set, substantially outperforming the provided baseline of **0.294**.
+Our approach proposes an ensemble of four prompting strategies: **question-style, masked-style, few-shot chain-of-thought, and least-to-most prompting.** It aggregates their predictions using relation-aware majority voting. There is an exception however for the *awardWonBy* relation, where the large number of correct objects per subject makes voting across strategies too restrictive. For this relation a **self-refinement** The resulting system achieves a Macro-F1 of **0.6651** on the hidden test set, substantially outperforming the provided baseline of **0.294**.
 
 <img width="2613" height="2613" alt="3be2d7e9-7948-473c-bb77-d31405d11817_page-0001" src="https://github.com/user-attachments/assets/993d05b0-d868-4809-ae32-e7b6f3d704b5" />
 
